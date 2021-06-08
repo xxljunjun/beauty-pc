@@ -73,11 +73,34 @@
       <TabSwiper />
     </div>
     <!-- 五 -->
-    <div class="txt"></div>
+    <div class="txt">
+      <div class="margintxt">
+        <div class="txt-inner" v-for="(item, index) in 9" :key="index">
+          <p class="titles">Elements</p>
+          <p class="txts">
+            There are over 50 unique elements included, that can be bundled
+            together to create even more variations.
+          </p>
+        </div>
+      </div>
+    </div>
     <!-- 六 -->
-    <div class="bottom"></div>
+    <div class="bottom">
+      <img src="../../statics/building.jpg" alt="" class="smalllogo" />
+      <p class="text_1">Purchase Architect UI Dashboard Template</p>
+      <p class="text_2">
+        You're making the smart choice. Enjoy a well built Bootstrap 4 Admin
+        Template built for jQuery/HTML!
+      </p>
+      <div class="btn">
+        <img src="../../statics/building.jpg" alt="" class="shop" />
+        <div>Buy on DashboardPack</div>
+      </div>
+    </div>
     <!-- 七 -->
-    <div class="last"></div>
+    <div class="last">
+      <p>Copyright © 2021 ArchitectUI</p>
+    </div>
   </div>
 </template>
 
@@ -319,16 +342,79 @@ export default {
     width: 100%;
     background: #fff;
     border-top: 4px solid #f7f7f8;
+    .margintxt {
+      width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      .txt-inner {
+        text-align: center;
+        width: 360px;
+        margin-top: 60px;
+        .titles {
+          font-size: 18px;
+          color: #000;
+        }
+        .txts {
+        }
+      }
+    }
   }
   .bottom {
     width: 100%;
     height: 430px;
     background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .smalllogo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 60px 0 25px;
+    }
+    .text_1 {
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .text_2 {
+      color: #c2ccd6;
+      width: 750px;
+      font-size: 18px;
+      margin-bottom: 16px;
+      text-align: center;
+      line-height: 26px;
+    }
+    .btn {
+      width: 345px;
+      height: 80px;
+      background: #3ac47d;
+      border-radius: 10px;
+      margin-top: 26px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .shop {
+        height: 24px;
+        width: 24px;
+        margin-right: 15px;
+      }
+    }
   }
   .last {
     height: 130px;
     width: 100%;
     background: #f1f4f6;
+    p {
+      text-align: center;
+      padding-top: 55px;
+    }
   }
 }
 </style>
