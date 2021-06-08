@@ -55,7 +55,19 @@
       </div>
     </div>
     <!-- 三 -->
-    <div class="box"></div>
+    <div class="box">
+      <img src="../../statics/building.jpg" alt="" class="smalllogo" />
+      <p class="text_1">Technical Support</p>
+      <p class="text_2">
+        Get in touch with us if you require assistance. We want to help you
+        build wonderful apps!
+      </p>
+      <p class="text_3">
+        The documentation files can be found inside the template package folder.
+      </p>
+      <div class="line"></div>
+      <div class="btn">Send us an email</div>
+    </div>
     <!-- 四 -->
     <div class="tab">
       <TabSwiper />
@@ -238,6 +250,7 @@ export default {
           text-align: center;
           padding: 0 20px;
           box-sizing: border-box;
+          border-radius: 6px;
           h4 {
             font-weight: normal;
             color: #000;
@@ -255,6 +268,46 @@ export default {
     width: 100%;
     height: 425px;
     background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .smalllogo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 60px 0 25px;
+    }
+    .text_1 {
+      color: #000;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .text_2 {
+      color: #2c2c2c;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .text_3 {
+      color: #033ace;
+      font-size: 22px;
+      margin-bottom: 55px;
+    }
+    .line {
+      height: 2px;
+      width: 1200px;
+      background: #eaedf0;
+    }
+    .btn {
+      width: 220px;
+      height: 50px;
+      background: #28b0cd;
+      border-radius: 10px;
+      margin-top: 26px;
+      line-height: 50px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+    }
   }
   .tab {
     width: 100%;
