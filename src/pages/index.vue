@@ -10,8 +10,7 @@
             <div
               v-for="(item, index) in tabBarArr"
               :key="index"
-              class="item scrollItem"
-              :class="scrollStatus ? 'item scrollItem' : 'item'"
+              :class="scrollStatus ? 'scrollItem' : 'item'"
             >
               {{ item.title }}
             </div>
@@ -44,7 +43,7 @@
         </p>
         <div class="header-title">Dashboards Demos</div>
         <div class="demo-box">
-          <div class="img-box" v-for="(item, index) in demoArr" :key="index">
+          <div class="img-box" v-for="item in demoArr" :key="item.id">
             <div class="who">
               <img :src="item.path" alt="0" class="demoimg" />
               <div class="img-overly">view demo</div>
@@ -197,7 +196,8 @@ export default {
           align-items: center;
           width: 800px;
           .scrollItem {
-            color: #000 !important;
+            color: #000;
+            margin-right: 30px;
           }
           .item {
             margin-right: 30px;
@@ -407,7 +407,6 @@ export default {
   }
   .tab {
     width: 100%;
-    height: 1480px;
     background: #fff;
   }
   .bottom {

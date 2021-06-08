@@ -57,3 +57,9 @@ export default new VueRouter({
 		{ path: '/*', redirect: '/home' }
 	]
 })
+
+# 四、完成功能滚动条、滑入放大、tab切换功能
+
+
+# 五、集成element-UI
++ npm i element-ui -S
