@@ -7,14 +7,15 @@
 <script>
 export default {
   name: 'App',
-  components: {
-    
-  }
+  components: {},
 }
 </script>
 
 <style lang="scss">
+body {
+  padding: 0;
+  margin: 0;
+}
 #app {
-  color:#000;
 }
 </style>
