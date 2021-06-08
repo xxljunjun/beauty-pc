@@ -4,10 +4,15 @@
     <!-- 一 -->
     <div class="top">
       <div class="top-text">
-        <div class="tabBar">
+        <div :class="scrollStatus ? 'tabBar scrollTabBar' : 'tabBar'">
           <div class="left">
             <img src="../../statics/building.jpg" alt="" class="logo" />
-            <div v-for="(item, index) in tabBarArr" :key="index" class="item">
+            <div
+              v-for="(item, index) in tabBarArr"
+              :key="index"
+              class="item scrollItem"
+              :class="scrollStatus ? 'item scrollItem' : 'item'"
+            >
               {{ item.title }}
             </div>
           </div>
@@ -15,7 +20,7 @@
             <div class="todemo">View Live Demo</div>
           </div>
         </div>
-        <div class="state">
+        <div :class="scrollStatus ? 'state scrollIstate' : 'state'">
           <p class="txt1">
             Modern Responsive Bootstrap 4 jQuery HTML Dashboard Template
           </p>
@@ -103,6 +108,7 @@ export default {
   },
   data() {
     return {
+      scrollStatus: false,
       tabBarArr: [
         { id: 1, title: 'Previews' },
         { id: 2, title: 'Features' },
@@ -122,8 +128,30 @@ export default {
       ],
     }
   },
-  mounted() {},
-  methods: {},
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      //变量scrollTop是滚动条滚动时，距离顶部的距离
+      var scrollTop =
+        document.documentElement.scrollTop || document.body.scrollTop
+      //变量windowHeight是可视区的高度(固定值)
+      // var windowHeight =
+      // document.documentElement.clientHeight || document.body.clientHeight
+      //变量scrollHeight是滚动条的总高度(固定值)
+      // var scrollHeight =
+      // document.documentElement.scrollHeight || document.body.scrollHeight
+      // console.log('00000000', scrollTop)
+      // console.log('111111', windowHeight)
+      // console.log('222222', scrollHeight)
+      if (scrollTop > 0) {
+        this.scrollStatus = true
+      } else {
+        this.scrollStatus = false
+      }
+    },
+  },
 }
 </script>
 
@@ -143,21 +171,34 @@ export default {
     height: 650px;
     background: rgba(0, 0, 0, 0.8);
     .top-text {
-      width: 1200px;
+      width: 100%;
       height: 650px;
       margin: 0 auto;
+      .scrollTabBar {
+        background: #fff;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+      }
       .tabBar {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
         height: 110px;
         align-items: center;
         margin-bottom: 100px;
+        transition: 0.3s;
         .left {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
+          width: 800px;
+          .scrollItem {
+            color: #000 !important;
+          }
           .item {
             margin-right: 30px;
             color: #fff;
@@ -169,7 +210,13 @@ export default {
           }
         }
         .right {
+          width: 400px;
+          height: 110px;
+          position: relative;
           .todemo {
+            position: absolute;
+            right: 0;
+            top: 30px;
             height: 44px;
             width: 160px;
             background: #f7b924;
@@ -179,6 +226,9 @@ export default {
             text-align: center;
           }
         }
+      }
+      .scrollIstate {
+        padding-top: 210px;
       }
       .state {
         margin: 0 auto;
