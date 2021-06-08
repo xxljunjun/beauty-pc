@@ -7,7 +7,7 @@
         <div class="tabBar">
           <div class="left">
             <img src="../../statics/building.jpg" alt="" class="logo" />
-            <div v-for="(item, index) in tabBarArr" :key="index" class="itme">
+            <div v-for="(item, index) in tabBarArr" :key="index" class="item">
               {{ item.title }}
             </div>
           </div>
@@ -40,7 +40,10 @@
         <div class="header-title">Dashboards Demos</div>
         <div class="demo-box">
           <div class="img-box" v-for="(item, index) in demoArr" :key="index">
-            <img :src="item.path" alt="0" class="demoimg" />
+            <div class="who">
+              <img :src="item.path" alt="0" class="demoimg" />
+              <div class="img-overly">view demo</div>
+            </div>
           </div>
         </div>
         <div class="demo-bottom">
@@ -119,6 +122,7 @@ export default {
       ],
     }
   },
+  mounted() {},
   methods: {},
 }
 </script>
@@ -154,7 +158,7 @@ export default {
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          .itme {
+          .item {
             margin-right: 30px;
             color: #fff;
           }
@@ -242,10 +246,41 @@ export default {
           margin-bottom: 32px;
           box-sizing: border-box;
           box-shadow: 0px 10px 24px 2px #848484;
-          .demoimg {
-            width: 320px;
-            height: 270px;
-            border-radius: 8px;
+          cursor: pointer;
+          background: #000;
+          .who {
+            position: relative;
+            &:hover .demoimg {
+              border-radius: 50px;
+              transform: scale(1.2);
+            }
+            &:hover .img-overly {
+              opacity: 1;
+              transform: scale(1.2);
+              border-radius: 50px;
+            }
+            .demoimg {
+              width: 320px;
+              height: 270px;
+              border-radius: 8px;
+              transition: 0.3s;
+            }
+            .img-overly {
+              position: absolute;
+              opacity: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.5);
+              transition: all 0.2s;
+              z-index: 6;
+              left: 0;
+              top: 0;
+              color: #fff;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
           }
         }
       }
