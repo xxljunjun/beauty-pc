@@ -72,18 +72,6 @@
     <div class="tab">
       <TabSwiper />
     </div>
-    <!-- 五 -->
-    <div class="txt">
-      <div class="margintxt">
-        <div class="txt-inner" v-for="(item, index) in 9" :key="index">
-          <p class="titles">Elements</p>
-          <p class="txts">
-            There are over 50 unique elements included, that can be bundled
-            together to create even more variations.
-          </p>
-        </div>
-      </div>
-    </div>
     <!-- 六 -->
     <div class="bottom">
       <img src="../../statics/building.jpg" alt="" class="smalllogo" />
@@ -336,31 +324,6 @@ export default {
     width: 100%;
     height: 1480px;
     background: #fff;
-  }
-  .txt {
-    height: 550px;
-    width: 100%;
-    background: #fff;
-    border-top: 4px solid #f7f7f8;
-    .margintxt {
-      width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      .txt-inner {
-        text-align: center;
-        width: 360px;
-        margin-top: 60px;
-        .titles {
-          font-size: 18px;
-          color: #000;
-        }
-        .txts {
-        }
-      }
-    }
   }
   .bottom {
     width: 100%;
