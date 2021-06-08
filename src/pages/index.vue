@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <img src="../assets/building_2.jpg" alt="" class="topimg" />
+    <img src="../..//statics/building_2.jpg" alt="" class="topimg" />
     <!-- 一 -->
     <div class="top">
       <div class="top-text">
         <div class="tabBar">
           <div class="left">
-            <img src="../assets/building.jpg" alt="" class="logo" />
+            <img src="../../statics/building.jpg" alt="" class="logo" />
             <div v-for="(item, index) in tabBarArr" :key="index" class="itme">
               {{ item.title }}
             </div>
@@ -29,7 +29,31 @@
       </div>
     </div>
     <!-- 二 -->
-    <div class="content"></div>
+    <div class="content">
+      <div class="content-inner">
+        <p class="blue-txt">jQuery Bootstrap 4 HTML Version</p>
+        <p class="black-txt">
+          Use with whatever server side language you prefer. Plain HTML, powered
+          by jQuery, HTML, Bootstrap 4 and Webpack (used for compiling SCSS and
+          JS).
+        </p>
+        <div class="header-title">Dashboards Demos</div>
+        <div class="demo-box">
+          <div class="img-box" v-for="(item, index) in demoArr" :key="index">
+            <img :src="item.path" alt="0" class="demoimg" />
+          </div>
+        </div>
+        <div class="demo-bottom">
+          <div class="txt-box" v-for="(item, index) in 2" :key="index">
+            <h4>10 Different Dashboards Available</h4>
+            <p>
+              Architect comes packed with over 8 different types of dashboards -
+              ready to use. If you get stuck, we're here to help.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- 三 -->
     <div class="box"></div>
     <!-- 四 -->
@@ -58,6 +82,17 @@ export default {
         { id: 2, title: 'Features' },
         { id: 3, title: 'Support' },
         { id: 4, title: 'Buy Now' },
+      ],
+      demoArr: [
+        { id: 1, path: require('../../statics/building.jpg') },
+        { id: 2, path: require('../../statics/building.jpg') },
+        { id: 3, path: require('../../statics/building.jpg') },
+        { id: 4, path: require('../../statics/building.jpg') },
+        { id: 5, path: require('../../statics/building.jpg') },
+        { id: 6, path: require('../../statics/building.jpg') },
+        { id: 7, path: require('../../statics/building.jpg') },
+        { id: 8, path: require('../../statics/building.jpg') },
+        { id: 9, path: require('../../statics/building.jpg') },
       ],
     }
   },
@@ -144,6 +179,77 @@ export default {
     height: 1190px;
     background: #fff;
     margin: 0 auto;
+    .content-inner {
+      width: 1200px;
+      height: 1190px;
+      background: #fff;
+      margin: 0 auto;
+      position: relative;
+      top: -110px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .blue-txt {
+        margin: 35px 0 14px;
+        color: #0026c4;
+        font-size: 18px;
+      }
+      .black-txt {
+        font-size: 14px;
+        color: #000;
+      }
+      .header-title {
+        margin: 80px 0 40px;
+        font-size: 18px;
+        color: #000;
+      }
+      .demo-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        padding: 0 40px;
+        .img-box {
+          width: 320px;
+          height: 270px;
+          border-radius: 8px;
+          margin-bottom: 32px;
+          box-sizing: border-box;
+          box-shadow: 0px 10px 24px 2px #848484;
+          .demoimg {
+            width: 320px;
+            height: 270px;
+            border-radius: 8px;
+          }
+        }
+      }
+      .demo-bottom {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .txt-box {
+          width: 580px;
+          height: 110px;
+          border: 2px solid #f2f4f8;
+          text-align: center;
+          padding: 0 20px;
+          box-sizing: border-box;
+          h4 {
+            font-weight: normal;
+            color: #000;
+            margin: 15px 0;
+            font-size: 18px;
+          }
+          p {
+            color: #49545f;
+          }
+        }
+      }
+    }
   }
   .box {
     width: 100%;
