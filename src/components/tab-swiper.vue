@@ -109,9 +109,31 @@ export default {
   border: 1px solid #d1d1d4;
   box-shadow: 0px 0px 10px 0px #d1d1d4;
   font-size: 30px;
+  display: block !important;
+  opacity: 1 !important;
+}
+/deep/.el-icon-arrow-left {
+  &::before {
+    color: #000;
+  }
+}
+/deep/.el-icon-arrow-right {
+  &::before {
+    color: #000;
+  }
 }
 /deep/.el-carousel:hover .el-carousel__arrow {
   background: #3f6ad8;
+}
+/deep/.el-carousel:hover .el-icon-arrow-right {
+  &::before {
+    color: #fff;
+  }
+}
+/deep/.el-carousel:hover .el-icon-arrow-left {
+  &::before {
+    color: #fff;
+  }
 }
 /deep/.el-carousel__button {
   width: 14px;
