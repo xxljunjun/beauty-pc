@@ -6,11 +6,12 @@
       <div class="top-text">
         <div :class="scrollStatus ? 'tabBar scrollTabBar' : 'tabBar'">
           <div class="left">
-            <div class="logo">artchitect</div>
+            <div class="logo" @click="toTOP">artchitect</div>
             <div
               v-for="(item, index) in tabBarArr"
               :key="index"
               :class="scrollStatus ? 'scrollItem' : 'item'"
+              @click="scrolltoId(item.id)"
             >
               {{ item.title }}
             </div>
@@ -150,6 +151,34 @@ export default {
         this.scrollStatus = false
       }
     },
+    toTOP() {
+      let ele = document.getElementsByClassName('home')[0]
+      ele.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    },
+    scrolltoId(id) {
+      //scrollIntoView的属性
+      let ele = ''
+      switch (id) {
+        case 1:
+          ele = document.getElementsByClassName('txt2')[0]
+          ele.scrollIntoView({ block: 'start', behavior: 'smooth' })
+          break
+        case 2:
+          ele = document.getElementsByClassName('btn')[0]
+          ele.scrollIntoView({ block: 'start', behavior: 'smooth' })
+          break
+        case 3:
+          ele = document.getElementsByClassName('txt-box')[0]
+          ele.scrollIntoView({ block: 'start', behavior: 'smooth' })
+          break
+        case 4:
+          ele = document.getElementsByClassName('bottom')[0]
+          ele.scrollIntoView({ block: 'start', behavior: 'smooth' })
+          break
+        default:
+          break
+      }
+    },
   },
 }
 </script>
@@ -200,6 +229,7 @@ export default {
             font-size: 24px;
             color: #bcbcbc;
             font-style: italic;
+            cursor: pointer;
           }
           .scrollItem {
             color: #000;
