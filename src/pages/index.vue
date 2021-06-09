@@ -6,7 +6,7 @@
       <div class="top-text">
         <div :class="scrollStatus ? 'tabBar scrollTabBar' : 'tabBar'">
           <div class="left">
-            <img src="../../statics/building.jpg" alt="" class="logo" />
+            <div class="logo">artchitect</div>
             <div
               v-for="(item, index) in tabBarArr"
               :key="index"
@@ -109,10 +109,10 @@ export default {
     return {
       scrollStatus: false,
       tabBarArr: [
-        { id: 1, title: 'Previews' },
-        { id: 2, title: 'Features' },
-        { id: 3, title: 'Support' },
-        { id: 4, title: 'Buy Now' },
+        { id: 1, title: 'PREVIEWS' },
+        { id: 2, title: 'FEATURES' },
+        { id: 3, title: 'SUPPORT' },
+        { id: 4, title: 'BUY NOW' },
       ],
       demoArr: [
         { id: 1, path: require('../../statics/xxl_1.jpg') },
@@ -195,18 +195,29 @@ export default {
           justify-content: space-between;
           align-items: center;
           width: 800px;
+          .logo {
+            font-weight: 500;
+            font-size: 24px;
+            color: #bcbcbc;
+            font-style: italic;
+          }
           .scrollItem {
             color: #000;
             margin-right: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            &:last-child {
+              color: #f7b924;
+            }
           }
           .item {
+            cursor: pointer;
             margin-right: 30px;
             color: #fff;
-          }
-          .logo {
-            width: 100px;
-            height: 30px;
-            margin-right: 60px;
+            font-weight: 500;
+            &:last-child {
+              color: #f7b924;
+            }
           }
         }
         .right {
@@ -214,6 +225,7 @@ export default {
           height: 110px;
           position: relative;
           .todemo {
+            cursor: pointer;
             position: absolute;
             right: 0;
             top: 30px;
@@ -394,6 +406,7 @@ export default {
       background: #eaedf0;
     }
     .btn {
+      cursor: pointer;
       width: 220px;
       height: 50px;
       background: #28b0cd;
@@ -436,6 +449,7 @@ export default {
       line-height: 26px;
     }
     .btn {
+      cursor: pointer;
       width: 345px;
       height: 80px;
       background: #3ac47d;
